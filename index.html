@@ -1,140 +1,198 @@
 export default function FuturisticClassWebsite() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_top,#1e3a8a,transparent_40%),radial-gradient(circle_at_bottom,#7c3aed,transparent_40%)] opacity-40"></div>
+    <div className="min-h-screen bg-black text-white overflow-x-hidden relative font-sans">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-cyan-950 opacity-95"></div>
 
-      <header className="relative z-10 flex items-center justify-between p-6 border-b border-cyan-500/30 backdrop-blur-xl bg-black/30">
-        <h1 className="text-3xl font-bold text-cyan-400 tracking-widest">
-          CLASSROOM X
-        </h1>
+      <header className="relative z-20 backdrop-blur-2xl bg-black/30 border-b border-cyan-400/20 sticky top-0">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-black tracking-[0.2em] text-cyan-400 drop-shadow-[0_0_20px_#22d3ee]">
+              CLASSROOM X
+            </h1>
+            <p className="text-gray-400 text-sm mt-1">Plateforme scolaire futuriste</p>
+          </div>
 
-        <nav className="flex gap-6 text-sm md:text-base">
-          <a href="#revision" className="hover:text-cyan-400 transition">Réviser</a>
-          <a href="#games" className="hover:text-cyan-400 transition">Jeux</a>
-          <a href="#music" className="hover:text-cyan-400 transition">Musique</a>
-          <a href="#tasks" className="hover:text-cyan-400 transition">Devoirs</a>
-        </nav>
+          <nav className="hidden md:flex gap-8 text-sm uppercase tracking-wider">
+            <a href="#dashboard" className="hover:text-cyan-400 transition">Dashboard</a>
+            <a href="#revision" className="hover:text-cyan-400 transition">Révisions</a>
+            <a href="#games" className="hover:text-cyan-400 transition">Jeux</a>
+            <a href="#music" className="hover:text-cyan-400 transition">Musique</a>
+            <a href="#tasks" className="hover:text-cyan-400 transition">Organisation</a>
+          </nav>
+        </div>
       </header>
 
-      <main className="relative z-10 px-6 py-12 max-w-7xl mx-auto">
-        <section className="text-center py-20">
-          <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">
-            LE FUTUR DE LA CLASSE
+      <main className="relative z-10 max-w-7xl mx-auto px-6">
+        <section className="min-h-[90vh] flex flex-col justify-center items-center text-center relative">
+          <div className="absolute w-96 h-96 bg-cyan-500/20 blur-3xl rounded-full"></div>
+
+          <h2 className="text-6xl md:text-8xl font-black leading-tight bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_#38bdf8]">
+            LE FUTUR
+            <br />
+            DE LA CLASSE
           </h2>
 
-          <p className="max-w-2xl mx-auto text-gray-300 text-lg">
-            Une plateforme moderne pour apprendre, jouer, écouter de la musique et réussir ses révisions.
+          <p className="mt-8 text-gray-300 max-w-3xl text-lg md:text-xl leading-relaxed">
+            Révise tes cours, joue à des jeux éducatifs, écoute de la musique et organise ton travail dans une plateforme moderne et immersive.
           </p>
 
-          <button className="mt-10 px-8 py-4 rounded-2xl bg-cyan-500 hover:bg-cyan-400 transition text-black font-bold shadow-[0_0_25px_#22d3ee]">
-            COMMENCER
-          </button>
+          <div className="mt-10 flex flex-wrap gap-5 justify-center">
+            <button className="px-8 py-4 rounded-2xl bg-cyan-400 text-black font-bold hover:scale-105 transition shadow-[0_0_35px_#22d3ee]">
+              Commencer
+            </button>
+
+            <button className="px-8 py-4 rounded-2xl border border-white/20 bg-white/5 hover:bg-white/10 transition backdrop-blur-xl">
+              Explorer
+            </button>
+          </div>
         </section>
 
-        <section id="revision" className="py-16">
-          <h3 className="text-4xl font-bold mb-10 text-cyan-400">📚 Révisions</h3>
-
-          <div className="grid md:grid-cols-3 gap-6">
+        <section id="dashboard" className="py-10">
+          <div className="grid md:grid-cols-4 gap-6">
             {[
-              {
-                title: 'Mathématiques',
-                desc: 'Cours, formules et exercices interactifs.'
-              },
-              {
-                title: 'Histoire',
-                desc: 'Frises chronologiques et fiches rapides.'
-              },
-              {
-                title: 'Sciences',
-                desc: 'Expériences, quiz et vidéos éducatives.'
-              }
-            ].map((card, index) => (
+              ['📚', '12 Cours'],
+              ['🎮', '8 Jeux'],
+              ['🎵', 'Playlist Focus'],
+              ['📝', '5 Devoirs']
+            ].map((item, i) => (
               <div
-                key={index}
-                className="bg-white/5 border border-cyan-500/20 rounded-3xl p-6 backdrop-blur-xl hover:scale-105 transition"
+                key={i}
+                className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl hover:scale-105 transition"
               >
-                <h4 className="text-2xl font-bold mb-3 text-cyan-300">{card.title}</h4>
-                <p className="text-gray-300">{card.desc}</p>
-                <button className="mt-6 px-4 py-2 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
-                  Ouvrir
+                <div className="text-5xl mb-4">{item[0]}</div>
+                <h3 className="text-2xl font-bold text-white">{item[1]}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="revision" className="py-20">
+          <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
+            <h3 className="text-5xl font-black text-cyan-400">📚 Révisions</h3>
+
+            <input
+              type="text"
+              placeholder="Rechercher un cours..."
+              className="px-5 py-3 rounded-2xl bg-white/5 border border-cyan-500/20 outline-none backdrop-blur-xl"
+            />
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {[
+              ['Mathématiques', 'Algèbre, géométrie et exercices interactifs.'],
+              ['Sciences', 'Physique, SVT et expériences virtuelles.'],
+              ['Histoire', 'Dates importantes et fiches rapides.']
+            ].map((card, i) => (
+              <div
+                key={i}
+                className="group bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-[30px] p-8 backdrop-blur-2xl hover:border-cyan-400/60 hover:scale-[1.03] transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.1)]"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-cyan-400/20 flex items-center justify-center text-3xl mb-6 group-hover:rotate-6 transition">
+                  📘
+                </div>
+
+                <h4 className="text-3xl font-bold mb-4 text-cyan-300">{card[0]}</h4>
+                <p className="text-gray-300 leading-relaxed">{card[1]}</p>
+
+                <button className="mt-8 px-5 py-3 rounded-xl bg-cyan-400 text-black font-bold hover:scale-105 transition">
+                  Ouvrir le cours
                 </button>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="games" className="py-16">
-          <h3 className="text-4xl font-bold mb-10 text-purple-400">🎮 Jeux éducatifs</h3>
+        <section id="games" className="py-20">
+          <h3 className="text-5xl font-black mb-10 text-purple-400">🎮 Jeux éducatifs</h3>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/5 rounded-3xl p-8 border border-purple-500/20">
-              <h4 className="text-2xl font-bold mb-4">Quiz Challenge</h4>
-              <p className="text-gray-300 mb-6">
-                Teste tes connaissances avec des quiz dynamiques.
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="relative overflow-hidden rounded-[35px] bg-gradient-to-br from-purple-600/20 to-pink-500/10 border border-purple-400/20 p-10 backdrop-blur-xl">
+              <div className="absolute -top-20 -right-20 w-60 h-60 bg-purple-500/20 rounded-full blur-3xl"></div>
+              <h4 className="text-4xl font-black mb-4">Quiz Battle</h4>
+              <p className="text-gray-300 mb-8 text-lg">
+                Défie tes amis avec des quiz ultra rapides.
               </p>
-              <button className="px-5 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 transition font-bold">
-                Jouer
+              <button className="px-6 py-3 rounded-2xl bg-purple-500 hover:bg-purple-400 transition font-bold">
+                Jouer maintenant
               </button>
             </div>
 
-            <div className="bg-white/5 rounded-3xl p-8 border border-pink-500/20">
-              <h4 className="text-2xl font-bold mb-4">Mémoire Flash</h4>
-              <p className="text-gray-300 mb-6">
-                Entraîne ta mémoire avec des cartes interactives.
+            <div className="relative overflow-hidden rounded-[35px] bg-gradient-to-br from-pink-600/20 to-red-500/10 border border-pink-400/20 p-10 backdrop-blur-xl">
+              <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-pink-500/20 rounded-full blur-3xl"></div>
+              <h4 className="text-4xl font-black mb-4">Memory Challenge</h4>
+              <p className="text-gray-300 mb-8 text-lg">
+                Entraîne ton cerveau avec des cartes interactives.
               </p>
-              <button className="px-5 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 transition font-bold">
-                Jouer
+              <button className="px-6 py-3 rounded-2xl bg-pink-500 hover:bg-pink-400 transition font-bold">
+                Commencer
               </button>
             </div>
           </div>
         </section>
 
-        <section id="music" className="py-16">
-          <h3 className="text-4xl font-bold mb-10 text-green-400">🎵 Musique</h3>
+        <section id="music" className="py-20">
+          <h3 className="text-5xl font-black mb-10 text-green-400">🎵 Musique Focus</h3>
 
-          <div className="bg-white/5 rounded-3xl p-8 border border-green-500/20 backdrop-blur-xl">
-            <p className="text-gray-300 mb-6">
-              Écoute de la musique pendant les révisions.
-            </p>
+          <div className="rounded-[35px] overflow-hidden border border-green-400/20 bg-white/5 backdrop-blur-2xl p-8 shadow-[0_0_40px_rgba(34,197,94,0.1)]">
+            <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
+              <div>
+                <h4 className="text-3xl font-bold">Playlist LoFi</h4>
+                <p className="text-gray-400">Musique relaxante pour réviser</p>
+              </div>
+
+              <button className="px-5 py-3 rounded-2xl bg-green-400 text-black font-bold hover:scale-105 transition">
+                Play Music
+              </button>
+            </div>
 
             <iframe
-              className="w-full rounded-2xl"
-              height="315"
+              className="w-full rounded-3xl"
+              height="500"
               src="https://www.youtube.com/embed/jfKfPfyJRdk"
-              title="Music"
+              title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </div>
         </section>
 
-        <section id="tasks" className="py-16">
-          <h3 className="text-4xl font-bold mb-10 text-yellow-400">📝 Devoirs & Organisation</h3>
+        <section id="tasks" className="py-20">
+          <h3 className="text-5xl font-black mb-10 text-yellow-300">📝 Organisation</h3>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/5 rounded-3xl p-8 border border-yellow-500/20">
-              <h4 className="text-2xl font-bold mb-4">Prochains devoirs</h4>
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="rounded-[35px] bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-400/20 p-8 backdrop-blur-xl">
+              <h4 className="text-3xl font-bold mb-6">Prochains devoirs</h4>
 
-              <ul className="space-y-4 text-gray-300">
-                <li>📘 Maths — Exercice 12 pour lundi</li>
-                <li>📗 Français — Lecture chapitre 4</li>
-                <li>📙 Histoire — Contrôle vendredi</li>
-              </ul>
+              <div className="space-y-5">
+                {[
+                  '📘 Maths — Exercices chapitre 5',
+                  '📗 Français — Lecture et résumé',
+                  '📙 Histoire — Révision contrôle'
+                ].map((task, i) => (
+                  <div
+                    key={i}
+                    className="bg-black/30 border border-white/10 rounded-2xl p-5 text-gray-300"
+                  >
+                    {task}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="bg-white/5 rounded-3xl p-8 border border-cyan-500/20">
-              <h4 className="text-2xl font-bold mb-4">Notes personnelles</h4>
+            <div className="rounded-[35px] bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 p-8 backdrop-blur-xl">
+              <h4 className="text-3xl font-bold mb-6">Bloc Notes</h4>
 
               <textarea
-                className="w-full h-40 rounded-2xl bg-black/40 border border-cyan-500/30 p-4 outline-none"
-                placeholder="Écris tes notes ici..."
+                className="w-full h-72 rounded-3xl bg-black/40 border border-white/10 p-6 outline-none text-gray-300 resize-none"
+                placeholder="Écris tes idées, devoirs et rappels ici..."
               ></textarea>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="relative z-10 text-center py-10 border-t border-cyan-500/20 text-gray-400">
-        © 2026 Classroom X — Site futuriste pour étudiants
+      <footer className="relative z-10 py-10 border-t border-white/10 text-center text-gray-500 backdrop-blur-xl mt-20">
+        © 2026 Classroom X — Designed for the future ✨
       </footer>
     </div>
   )
