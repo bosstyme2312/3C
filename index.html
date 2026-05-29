@@ -1,0 +1,141 @@
+export default function FuturisticClassWebsite() {
+  return (
+    <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_top,#1e3a8a,transparent_40%),radial-gradient(circle_at_bottom,#7c3aed,transparent_40%)] opacity-40"></div>
+
+      <header className="relative z-10 flex items-center justify-between p-6 border-b border-cyan-500/30 backdrop-blur-xl bg-black/30">
+        <h1 className="text-3xl font-bold text-cyan-400 tracking-widest">
+          CLASSROOM X
+        </h1>
+
+        <nav className="flex gap-6 text-sm md:text-base">
+          <a href="#revision" className="hover:text-cyan-400 transition">Réviser</a>
+          <a href="#games" className="hover:text-cyan-400 transition">Jeux</a>
+          <a href="#music" className="hover:text-cyan-400 transition">Musique</a>
+          <a href="#tasks" className="hover:text-cyan-400 transition">Devoirs</a>
+        </nav>
+      </header>
+
+      <main className="relative z-10 px-6 py-12 max-w-7xl mx-auto">
+        <section className="text-center py-20">
+          <h2 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">
+            LE FUTUR DE LA CLASSE
+          </h2>
+
+          <p className="max-w-2xl mx-auto text-gray-300 text-lg">
+            Une plateforme moderne pour apprendre, jouer, écouter de la musique et réussir ses révisions.
+          </p>
+
+          <button className="mt-10 px-8 py-4 rounded-2xl bg-cyan-500 hover:bg-cyan-400 transition text-black font-bold shadow-[0_0_25px_#22d3ee]">
+            COMMENCER
+          </button>
+        </section>
+
+        <section id="revision" className="py-16">
+          <h3 className="text-4xl font-bold mb-10 text-cyan-400">📚 Révisions</h3>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Mathématiques',
+                desc: 'Cours, formules et exercices interactifs.'
+              },
+              {
+                title: 'Histoire',
+                desc: 'Frises chronologiques et fiches rapides.'
+              },
+              {
+                title: 'Sciences',
+                desc: 'Expériences, quiz et vidéos éducatives.'
+              }
+            ].map((card, index) => (
+              <div
+                key={index}
+                className="bg-white/5 border border-cyan-500/20 rounded-3xl p-6 backdrop-blur-xl hover:scale-105 transition"
+              >
+                <h4 className="text-2xl font-bold mb-3 text-cyan-300">{card.title}</h4>
+                <p className="text-gray-300">{card.desc}</p>
+                <button className="mt-6 px-4 py-2 rounded-xl bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">
+                  Ouvrir
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="games" className="py-16">
+          <h3 className="text-4xl font-bold mb-10 text-purple-400">🎮 Jeux éducatifs</h3>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/5 rounded-3xl p-8 border border-purple-500/20">
+              <h4 className="text-2xl font-bold mb-4">Quiz Challenge</h4>
+              <p className="text-gray-300 mb-6">
+                Teste tes connaissances avec des quiz dynamiques.
+              </p>
+              <button className="px-5 py-3 rounded-xl bg-purple-500 hover:bg-purple-400 transition font-bold">
+                Jouer
+              </button>
+            </div>
+
+            <div className="bg-white/5 rounded-3xl p-8 border border-pink-500/20">
+              <h4 className="text-2xl font-bold mb-4">Mémoire Flash</h4>
+              <p className="text-gray-300 mb-6">
+                Entraîne ta mémoire avec des cartes interactives.
+              </p>
+              <button className="px-5 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 transition font-bold">
+                Jouer
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="music" className="py-16">
+          <h3 className="text-4xl font-bold mb-10 text-green-400">🎵 Musique</h3>
+
+          <div className="bg-white/5 rounded-3xl p-8 border border-green-500/20 backdrop-blur-xl">
+            <p className="text-gray-300 mb-6">
+              Écoute de la musique pendant les révisions.
+            </p>
+
+            <iframe
+              className="w-full rounded-2xl"
+              height="315"
+              src="https://www.youtube.com/embed/jfKfPfyJRdk"
+              title="Music"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
+          </div>
+        </section>
+
+        <section id="tasks" className="py-16">
+          <h3 className="text-4xl font-bold mb-10 text-yellow-400">📝 Devoirs & Organisation</h3>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/5 rounded-3xl p-8 border border-yellow-500/20">
+              <h4 className="text-2xl font-bold mb-4">Prochains devoirs</h4>
+
+              <ul className="space-y-4 text-gray-300">
+                <li>📘 Maths — Exercice 12 pour lundi</li>
+                <li>📗 Français — Lecture chapitre 4</li>
+                <li>📙 Histoire — Contrôle vendredi</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 rounded-3xl p-8 border border-cyan-500/20">
+              <h4 className="text-2xl font-bold mb-4">Notes personnelles</h4>
+
+              <textarea
+                className="w-full h-40 rounded-2xl bg-black/40 border border-cyan-500/30 p-4 outline-none"
+                placeholder="Écris tes notes ici..."
+              ></textarea>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="relative z-10 text-center py-10 border-t border-cyan-500/20 text-gray-400">
+        © 2026 Classroom X — Site futuriste pour étudiants
+      </footer>
+    </div>
+  )
+}
